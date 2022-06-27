@@ -15,7 +15,6 @@ build: off  # отключаем встроенную в appveyor систему
 
 build_script:
   - yarn build   # команда сборки
-  - yarn start
-
 test_script:
+  - yarn start
   - yarn test  # скрипт тестирования
