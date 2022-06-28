@@ -12,7 +12,10 @@ install:
   - yarn  # команда установки зависимостей
 
 before_build:
-  - PowerShell .\InstallSelfSignedCert.ps1
+  - ps: Set-Service -Name iisadmin -StartupType Manual
+  - ps: Set-Service -Name W3SVC -StartupType Manual
+  - net start iisadmin
+  - net start W3SVC
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
