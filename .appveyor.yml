@@ -13,9 +13,11 @@ install:
 
 build: off  # отключаем встроенную в appveyor систему сборки
 
+services:
+  - iis
+  -
 build_script:
   - yarn build   # команда сборки
-before_test:
-  - yarn start
+
 test_script:
   - yarn test  # скрипт тестирования
