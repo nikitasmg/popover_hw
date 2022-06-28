@@ -11,16 +11,8 @@ cache: node_modules  # кеширование
 install:
   - yarn  # команда установки зависимостей
 
-before_build:
-  - ps: Set-Service -Name iisadmin -StartupType Manual
-  - ps: Set-Service -Name W3SVC -StartupType Manual
-  - net start iisadmin
-  - net start W3SVC
 
 build: off  # отключаем встроенную в appveyor систему сборки
-
-services:
-  - iis
 
 build_script:
   - yarn build   # команда сборки
